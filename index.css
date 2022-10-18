@@ -25,5 +25,13 @@ label {
 input[type=range]::-webkit-slider-runnable-track {
   color: blueviolet;
   }
+
+.bekreft-knapp {
+  background-color: rgb(114, 162, 218);
+  color: white;
+  border-radius: 3px;
+  border-width: 1px;
+  cursor: pointer;
+}
   
   
