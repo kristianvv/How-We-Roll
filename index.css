@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(223, 208, 233);
+  }
+  
+  h1 {
+    color: rgb(6, 6, 83);
+    margin-left: 20px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 46px;
+  }
+
+  p { 
+    color: rgb(79, 38, 128);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(51, 23, 54);  
+    font-family: "Courier New", monospace, serif;
+    font-size: 20px;
+  }
+  
+label {
+    color: rgb(0, 0, 0);
+    font-family: "Courier New", monospace, serif;
+    font-size: 14px;
+} 
+input[type=range]::-webkit-slider-runnable-track {
+  color: blueviolet;
+  }
+  
+  
