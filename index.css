@@ -8,6 +8,8 @@ body {
     font-family: 'Fjalla One', sans-serif;
     font-size: 46px;
     text-align: center;
+    border-radius: 23px;
+  
   }
 
   p { 
