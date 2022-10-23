@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nb"> 
+    
+    <title> How-We-Roll form</title>
+<head> 
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1 style="background-color:rgb(114, 162, 218);">How We Roll - form</h1> 
+    <form>
+        <div class="a">
+            <p>
+            <label>Navn</label>
+            <input type="text" value="Ola Nordmann">
+            </p>
+            <p>
+            <label>Email</label>
+            <input type="text" value="example@example.com">
+            </p>
+        </div>
+        <div class="a" name="9Bdata" id="9Bdata">
+
+            <p> 
+             <p> Er du mer effektiv på morgningen eller på kvelden? </p>
+             <label >Morgenfugl</label>
+             <input type="range" name="points" min="0" max="10">
+             <label >Nattugle</label>
+            </p>
+            <p>  
+                <p> Foretrekker du å arbeide alene eller sammen med andre?</p>         
+                <label >Alene</label>
+                <input type="range" name="points" min="0" max="10">
+                <label >Med Andre</label>
+               </p>
+            <p>     
+                <p> Hvor mye trener du? </p>       
+             <label >Trener lite</label>
+             <input type="range" name="points" min="0" max="10">
+             <label >Trener mye</label>
+            </p>
+            <p> 
+                <p> Hvor mye sover du?</p>           
+            <label >Sover lite</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >Sover mye</label>
+            </p>
+            <p>     
+                <p>Kommer du tidlig eller for seint?</p>       
+            <label >For tidlig</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >For seint</label>
+            </p>
+            <p>     
+                <p> Ser du på deg selv som mer innandvent eller mer utadvent?</p>       
+            <label >Utadvent</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >Innadvent</label>
+            </p>
+            <p>   
+                <p> Foretrekker du å jobbe hjemme eller på skolen?</p>         
+            <label >Hjemme</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >Skole</label>
+            </p>
+            <p>   
+                <p> Foretrekker du å kommunisere via tekstmeldinger eller ved lydsamtaler?</p>         
+            <label >Teskting</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >Ringing</label>
+            </p>
+            <p>   
+                <p> Foretrekker du å levere oppgaver så fort som mulig eller å utsette arbeidet?</p>         
+            <label >Gjør det</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >Utsette</label>
+            </p>
+            <p>     
+                <p> Er du komfertabel med å spørre andre om hjelp?</p>       
+            <label >Spørre</label>
+            <input type="range" name="points" min="0" max="10">
+            <label >Ikke få hjelp</label>
+            </p>
+            <p>     
+                <p> Hvor gammel er du?</p>       
+            <label >Alder</label>
+            <input type="number" name="points" min="0" max="100">
+            </p>
+            <input type="button" value="Bekreft" class="bekreft-knapp"><br><br>
+            <input type="button" value="Resultat" class="bekreft-knapp" onclick="window.open('web_rapport.html', '_blank');" />
+        </div>
+      </form>
+</body>
+</html>
