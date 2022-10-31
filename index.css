@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(223, 208, 233);
+  }
+  
+  h1 {
+    color: rgb(6, 6, 83);
+    margin-left: 20px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 46px;
+    text-align: center;
+    border-radius: 23px;
+  
+  }
+
+  p { 
+    color: rgb(79, 38, 128);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(51, 23, 54);  
+    font-family: "Courier New", monospace, serif;
+    font-size: 20px;
+  }
+  div.a {
+    text-align: center;
+    margin: 20px;
+  }
+  
+label {
+    color: rgb(0, 0, 0);
+    font-family: "Courier New", monospace, serif;
+    font-size: 14px;
+} 
+input[type=range]::-webkit-slider-runnable-track {
+  color: blueviolet;
+  }
+
+.bekreft-knapp {
+  background-color: rgb(114, 162, 218);
+  color: white;
+  border-radius: 3px;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+.bekreft-knapp:hover {
+  opacity: 0.7;
+}
+.bekreft-knapp:active {
+  box-shadow: 5px 5px 10px rgba(0,0,0, 0.15);
+}
+  
+input[type=range]:hover {
+  opacity: 0.6; 
+}
+input[type=range]:active {
+  opacity: 1;
+}
+  

@@ -1,0 +1,9 @@
+Anallyse basert på kravspesifikasjonen;
+
+beskrivelse av alle brukerhistorier for felleskapet. for prosjektstyring kan dette være til hjelp.
+
+brukerhisorie 1; earlybird eller nightowl?
+Hvis man vil ha folk i team, burde man plukke ut de som svarer likt. De vil jobbe best sammen. 
+
+brukerhistorie 2; foretsrekker du å jobbe alene eller sammen med andre?
+Hvis man trenger mange folk på en oppg. så er det fint å velge de som har svart at de liker å jobbe med andre. 
