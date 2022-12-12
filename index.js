@@ -1,11 +1,12 @@
 var today = new Date();
-var date = ((today.getFullYear)(today.getMonth+1));
+var date = ((today.getTime)(Date.parse));
+var randomID = Math.random() * 16 | 9;
 let personer = [];
 // Eksempel
 const addPerson = (ev)=>{
     ev.preventDefault();  //Stopper html form fra å bekrefte
     let person = {
-        trid: "################",
+        trid: randomID,
         tid: today,
         navn: document.getElementById('navn').value,
         email: document.getElementById('email').value,
