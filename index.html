@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="nb"> 
-    
+
     <title> How-We-Roll</title>
 <head> 
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 </head>
 <body>
-    <h1 style="background-color:rgb(114, 162, 218);">How We Roll</h1> 
+    <h1 class="bar" style="background-color: rgb(171, 171, 225); font-size: 70px; color: black;">How-We-Roll</h1>
     <form>
-        <div class="a">
+        <div class="a" id="9Bdata">
             <p>
-            <label>Navn</label>
-            <input type="text" value="Ola Nordmann">
+            <input type="text" placeholder="Fullt navn" id="navn">
             </p>
             <p>
-            <label>Email</label>
-            <input type="text" value="example@example.com">
+            <input type="text" placeholder="Din email" id="email">
             </p>
-        </div>
-        <div class="a" name="9Bdata" id="9Bdata">
-
-            <p> 
              <p> Er du mer effektiv på morgningen eller på kvelden? </p>
              <label >Morgenfugl</label>
-             <input type="range" name="points" min="0" max="10">
+             <input type="range" name="points" min="0" max="10" id="mon">
              <label >Nattugle</label>
+            </p> 
+            <p> Foretrekker du å arbeide alene eller sammen med andre?</p>         
+             <label >Alene</label>
+             <input type="range" name="points" min="0" max="10" id="sos">
+             <label >Med Andre</label>
             </p>
-            <p>  
-                <p> Foretrekker du å arbeide alene eller sammen med andre?</p>         
-                <label >Alene</label>
-                <input type="range" name="points" min="0" max="10">
-                <label >Med Andre</label>
-               </p>
             <p>     
-                <p> Hvor mye trener du? </p>       
+            <p> Hvor mye trener du? </p>       
              <label >Trener lite</label>
-             <input type="range" name="points" min="0" max="10">
+             <input type="range" name="points" min="0" max="10" id="tre">
              <label >Trener mye</label>
-            </p>
-            <p> 
-                <p> Hvor mye sover du?</p>           
-            <label >Sover lite</label>
-            <input type="range" name="points" min="0" max="10">
-            <label >Sover mye</label>
-            </p>
-            <p>     
-                <p>Kommer du tidlig eller for seint?</p>       
+            </p> 
+            <p> Hvor mye sover du?</p>           
+             <label >Sover lite</label>
+             <input type="range" name="points" min="0" max="10" id="søv">
+             <label >Sover mye</label>
+            </p>   
+            
+            <p>Kommer du tidlig eller for seint?</p>       
             <label >For tidlig</label>
-            <input type="range" name="points" min="0" max="10">
+            <input type="range" name="points" min="0" max="10" id="tos">
             <label >For seint</label>
-            </p>
-            <p>     
+            </p>  
+
                 <p> Ser du på deg selv som mer innandvent eller mer utadvent?</p>       
             <label >Utadvent</label>
-            <input type="range" name="points" min="0" max="10">
+            <input type="range" name="points" min="0" max="10" id="ieu">
             <label >Innadvent</label>
             </p>
-            <p>   
+
                 <p> Foretrekker du å jobbe hjemme eller på skolen?</p>         
             <label >Hjemme</label>
-            <input type="range" name="points" min="0" max="10">
+            <input type="range" name="points" min="0" max="10" id="jes">
             <label >Skole</label>
             </p>
-            <p>   
+
                 <p> Foretrekker du å kommunisere via tekstmeldinger eller ved lydsamtaler?</p>         
             <label >Teskting</label>
-            <input type="range" name="points" min="0" max="10">
+            <input type="range" name="points" min="0" max="10" id="kom">
             <label >Ringing</label>
-            </p>
-            <p>   
+            </p> 
+
                 <p> Foretrekker du å levere oppgaver så fort som mulig eller å utsette arbeidet?</p>         
             <label >Gjør det</label>
-            <input type="range" name="points" min="0" max="10">
+            <input type="range" name="points" min="0" max="10" id="meu">
             <label >Utsette</label>
-            </p>
-            <p>     
-                <p> Er du komfertabel med å spørre andre om hjelp?</p>       
+            </p>  
+
+            <p> Er du komfertabel med å spørre andre om hjelp?</p>       
             <label >Spørre</label>
-            <input type="range" name="points" min="0" max="10">
+            <input type="range" name="points" min="0" max="10" id="seh">
             <label >Ikke få hjelp</label>
-            </p>
-            <p>     
-                <p> Hvor gammel er du?</p>       
+            </p>     
+            <p> Hvor gammel er du?</p>       
             <label >Alder</label>
-            <input type="number" name="points" min="0" max="100">
+            <input type="number" name="points" min="0" max="10" id="alder">
             </p>
-            <input type="button" value="Bekreft" class="bekreft-knapp">
+            <input type="button" id="btn" value="Bekreft" class="bekreft-knapp" onclick="window.open('web_rapport.html', '_blank');">
             </p>
         </div>
       </form>
+      <div id="msg">
+        <pre>
+        </pre>
+      </div>
+      <script type="text/javascript">
+        document.querySelectorAll('input[type=range]').forEach(f => {
+  f.setAttribute('data-value', f.value);
+  f.addEventListener('input', () => {
+    f.setAttribute('data-value', f.value);
+  });
+});
+    </script>
 </body>
 </html>
