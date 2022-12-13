@@ -1,13 +1,15 @@
-var today = new Date();
-var date = ((today.getTime)(Date.parse));
-var randomID = Math.random() * 16 | 9;
+document.addEventListener('DOMContentLoaded', ()=>{
+document.getElementById('btn').addEventListener('click', addPerson)})
+const d = new Date();
+const str = d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString() + d.getMinutes().toString() + d.getSeconds().toString();
+var id = Math.random().toString(10).substring(2, 18)
 let personer = [];
 // Eksempel
 const addPerson = (ev)=>{
     ev.preventDefault();  //Stopper html form fra å bekrefte
     let person = {
-        trid: randomID,
-        tid: today,
+        trid: id,
+        tid: str,
         navn: document.getElementById('navn').value,
         email: document.getElementById('email').value,
         alder: document.getElementById('alder').value,
@@ -23,17 +25,10 @@ const addPerson = (ev)=>{
     document.querySelector('form').reset(); //Fjerner neste entries
 
     //Logger visning av JSON-objekt
-    console.warn('added' , {personer} );
+    console.warn('added');
     let pre = document.querySelector('#msg pre');
     pre.textContent = '' + JSON.stringify(personer, '/t', 2);
 
     //lagrer til localStorage
     localStorage.setItem('Personer', JSON.stringify(personer) );
 }
-document.addEventListener('DOMContentLoaded', ()=>{ 
-    document.getElementById('btn').addEventListener('click', addPerson);
-
-    var id = Math.random() * 16 | 0, v = v == '#' ? v : (v & 0x3 | 0x8);
-    result = v.toString(16);
-    return '################'.replace(/[#]/).toString.trid
-});
