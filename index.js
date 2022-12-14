@@ -28,7 +28,4 @@ const addPerson = (ev)=>{
     console.warn('added');
     let pre = document.querySelector('#msg pre');
     pre.textContent = '' + JSON.stringify(personer, '/t', 2);
-
-    //lagrer til localStorage
-    localStorage.setItem('Personer', JSON.stringify(personer) );
 }
