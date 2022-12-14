@@ -1,0 +1,70 @@
+body{
+background: #e2e1e0;
+text-align: center;
+font-family: monospace;
+}
+.kort{
+    background: #1d2630;
+    border-radius: 6px;
+    display: inline-block;
+    height: 470px;
+    width: 375px;
+    margin-top: 60px;
+    box-shadow: 0 12px 13px rgba(0, 0, blue, 0.16);
+
+}
+
+.kortinnhold{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;}
+.img{
+    border-radius: 100%;
+    margin-top: 60px;
+    width: 132px;
+    height: 128px;
+}
+
+.Navn
+{
+    color: #fff;
+}
+
+.title{
+    color: #7c8097;
+    font-size: 16px;
+}
+
+.desc{
+    font-size: 14px;
+    margin-left: 65px;
+    margin-right: 65px;
+    color: #b7b8c0;
+margin-top: 16px;
+}
+
+.btn{
+    outline: none;
+    background: #19a68c;
+    margin-top: 20px;
+    border: none;
+    height: 40px;
+    width: 35%;
+    color: #fff;
+    font-size: 19px;
+    border-radius: 30px;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    
+}
+
+.btn:hover{
+    color:#19a68c;
+    background: #e2e1e0;
+    transition: all 400ms linear;
+    cursor: pointer;
+}
