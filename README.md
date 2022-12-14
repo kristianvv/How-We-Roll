@@ -8,4 +8,6 @@
 
 
 
-Et mål vi har er å klare å bruke daten vi samler i undersøkelsen til å lage en profil av hver enkelt av oss slik at vi enkelt kan se hvilke personer som matcher hverandre og som kan samarbeide godt
+Et mål vi har er å klare å bruke daten vi samler i undersøkelsen til å lage en profil av hver enkelt av oss slik at vi enkelt kan se hvilke personer som matcher hverandre og som kan samarbeide godt.
+
+Vi har også satt oss et mål om å få alle de funksjonene vi ønsker å ha på vår nettside til å fungere, for å deretter fokusere på design
