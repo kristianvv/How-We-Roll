@@ -1,8 +1,19 @@
 body {
-    background-color: rgb(223, 208, 233);
+    background-color: rgb(245, 218, 198);
   }
+  ul {
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 23px;
+  
+  }
+
   
   h1 {
+    background-color: rgb(11, 162, 222); font-size: 70px; color: black;
     color: rgb(6, 6, 83);
     margin-left: 20px;
     font-family: 'Fjalla One', sans-serif;
@@ -13,10 +24,10 @@ body {
   }
 
   p { 
-    color: rgb(79, 38, 128);
-    text-decoration-line: underline;
+    color: rgb(0, 0, 0);
+    <!--text-decoration-line: underline;-->
     text-decoration-color: rgb(51, 23, 54);  
-    font-family: "Courier New", monospace, serif;
+    font-family: "Georgia", monospace, serif;
     font-size: 20px;
   }
   div.a {
