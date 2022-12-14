@@ -68,3 +68,60 @@ margin-top: 16px;
     transition: all 400ms linear;
     cursor: pointer;
 }
+
+body{
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  li{
+    list-style-type: none;
+  }
+  
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10%;
+    background-color: #2C3E50;
+    justify-content: space-between;
+  }
+  
+  .logo{
+    color: #FFF;
+    font-weight: 900;
+  }
+  
+  nav ul{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav ul li{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  nav ul li a{
+    color: #FFF;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 1px;
+  }
+  
+  nav ul li a:hover{
+    color: #DC7633;
+  }
+  
+  .cta{
+    background-color: #DC7633;
+    color: #FFF;
+  }
+  
+  .cta:hover{
+    background-color: #D35400;
+    color: #FFF;
+  }
+  
