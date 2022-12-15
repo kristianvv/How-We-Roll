@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-document.getElementById('btn').addEventListener('click', addPerson)})
-const d = new Date();
-const str = d.getFullYear().toString() + (d.getMonth() + 1).toString() + d.getDate().toString() + d.getMinutes().toString() + d.getSeconds().toString();
-var id = Math.random().toString(10).substring(2, 18)
 let personer = [];
 // Eksempel
 const addPerson = (ev)=>{

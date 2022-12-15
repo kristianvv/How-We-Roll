@@ -18,10 +18,212 @@
     </header>
     <h1>How We Roll resultat</h1>
     <form>
+      <canvas id="can"></canvas>
       <div class="a">
         <p>Her kommer resultat</p>
         <br />
       </div>
     </form>
+    <div class="9b data">
+      <p>9B 2022</p>
+    </div>
+    <script>
+      let canvas = document.querySelector("canvas");
+      canvas.height = 600;
+
+      var c = canvas.getContext("2d");
+
+      c.font = "10px serif";
+      //mona
+      c.fillText("Morgenfugl", 14, 15);
+      c.fillText("Nattugle", 180, 15);
+
+      c.beginPath();
+      c.moveTo(70, 12);
+      c.lineTo(170, 12);
+
+      //aila
+      c.fillText("Alene", 10, 45);
+      c.fillText("Med andre", 180, 45);
+
+      //context.beginPath();
+      c.moveTo(70, 42);
+      c.lineTo(170, 42);
+
+      //dify
+      c.fillText("Detaljert", 32, 75);
+      c.fillText("Kort og konkret", 180, 75);
+
+      c.moveTo(70, 72);
+      c.lineTo(170, 72);
+
+      //stosmå
+      c.fillText("Lite", 17, 105);
+      c.fillText("Mye", 180, 105);
+
+      c.moveTo(70, 102);
+      c.lineTo(170, 102);
+
+      //plako
+      c.fillText("For tidlig", 30, 135);
+      c.fillText("For seint", 180, 135);
+
+      c.moveTo(70, 132);
+      c.lineTo(170, 132);
+
+      //lokre
+      c.fillText("Utadvent", 38, 165);
+      c.fillText("Innadvent", 180, 165);
+
+      c.moveTo(70, 162);
+      c.lineTo(170, 162);
+
+      //tobntob
+      c.fillText("Hjemme", 40, 195);
+      c.fillText("Andre steder", 180, 195);
+
+      c.moveTo(70, 192);
+      c.lineTo(170, 192);
+
+      //kate
+      c.fillText("Teksts", 40, 225);
+      c.fillText("Lyd", 180, 225);
+
+      c.moveTo(70, 222);
+      c.lineTo(170, 222);
+      c.stroke();
+
+      fetch(
+        "https://bacit.info/hwr/20221215120343-5b132d1faf39a4a1e13023b52037b7bb.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 70 + parseInt(data.sos, 10);
+          var Y = 42;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.tre, 10);
+          var Y = 72;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.søv, 10);
+          var Y = 102;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.tos, 10);
+          var Y = 132;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.ieu, 10);
+          var Y = 162;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.jes, 10);
+          var Y = 192;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.kom, 10);
+          var Y = 222;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.meu, 10);
+          var Y = 252;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.seh, 10);
+          var Y = 282;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 70 + parseInt(data.alder, 10);
+          var Y = 312;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 20;
+          var Y = 432;
+          var R = 5;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 435);
+        });
+    </script>
   </body>
 </html>
