@@ -19,91 +19,126 @@
         </nav>
     </header>
 </body>
-    <!-- Selve navigationbaren -->
-    <form>
-        <div class="a" id="9Bdata">
-            <p>
-            <input type="text" placeholder="Fullt navn" id="navn">
-            </p>
-            <p>
-            <input type="text" placeholder="Din email" id="email">
-            </p>
-             <p> Er du mer effektiv på morgningen eller på kvelden? </p>
-             <label >Morgenfugl</label>
-             <input type="range" name="points" min="0" max="10" id="mon">
-             <label >Nattugle</label>
-            </p> 
-            <p> Foretrekker du å arbeide alene eller sammen med andre?</p>         
-             <label >Alene</label>
-             <input type="range" name="points" min="0" max="10" id="sos">
-             <label >Med Andre</label>
-            </p>
-            <p>     
-            <p> Liker du detaljerte forklaringer eller komme til poenget?</p>       
-             <label >Detaljert</label>
-             <input type="range" name="points" min="0" max="10" id="tre">
-             <label >Kort og konkret</label>
-            </p> 
-            <p> Hvor mye ansvar tar du?</p>           
-             <label >Lite</label>
-             <input type="range" name="points" min="0" max="10" id="søv">
-             <label >Mye</label>
-            </p>   
-            
-            <p>Kommer du tidlig eller for seint?</p>       
-            <label >For tidlig</label>
-            <input type="range" name="points" min="0" max="10" id="tos">
-            <label >For seint</label>
-            </p>  
+<!-- Selve navigationbaren -->
+<form>
+    <div class="a" id="9Bdata">
+        <p>
+        <input type="text" placeholder="Fullt navn" name="navn" id="navn">
+        </p>
+        <p>
+        <input type="text" placeholder="Din email" name="email" id="email">
+        </p>
+         <p> Er du mer effektiv på morgningen eller på kvelden? </p>
+         <label >Morgenfugl</label>
+         <input type="range" min="0" max="10" name="mon" id="mon">
+         <label >Nattugle</label>
+        </p> 
+        <p> Foretrekker du å arbeide alene eller sammen med andre?</p>         
+         <label >Alene</label>
+         <input type="range" min="0" max="10" name="sos" id="sos">
+         <label >Med Andre</label>
+        </p>
+        <p>     
+        <p> Liker du detaljerte forklaringer eller komme til poenget?</p>       
+         <label >Detaljert</label>
+         <input type="range" min="0" max="10" name="tre" id="tre">
+         <label >Kort og konkret</label>
+        </p> 
+        <p> Hvor mye ansvar tar du?</p>           
+         <label >Lite</label>
+         <input type="range"  min="0" max="10" name="søv" id="søv">
+         <label >Mye</label>
+        </p>   
+        
+        <p>Kommer du tidlig eller for seint?</p>       
+        <label >For tidlig</label>
+        <input type="range"  min="0" max="10" name="tos" id="tos">
+        <label >For seint</label>
+        </p>  
 
-                <p> Er du innandvent eller utadvent?</p>       
-            <label >Utadvent</label>
-            <input type="range" name="points" min="0" max="10" id="ieu">
-            <label >Innadvent</label>
-            </p>
+            <p> Er du innandvent eller utadvent?</p>       
+        <label >Utadvent</label>
+        <input type="range"  min="0" max="10" name="ieu" id="ieu">
+        <label >Innadvent</label>
+        </p>
 
-                <p> Liker du å jobbe hjemme eller andre steder</p>         
-            <label >Hjemme</label>
-            <input type="range" name="points" min="0" max="10" id="jes">
-            <label >Andre steder</label>
-            </p>
+            <p> Liker du å jobbe hjemme eller andre steder</p>         
+        <label >Hjemme</label>
+        <input type="range"  min="0" max="10" name="jes" id="jes">
+        <label >Andre steder</label>
+        </p>
 
-                <p> Foretrekker du å kommunisere via meldinger eller lyd?</p>         
-            <label >Tekst</label>
-            <input type="range" name="points" min="0" max="10" id="kom">
-            <label >Lyd</label>
-            </p> 
+            <p> Foretrekker du å kommunisere via meldinger eller lyd?</p>         
+        <label >Tekst</label>
+        <input type="range"  min="0" max="10" name="kom" id="kom">
+        <label >Lyd</label>
+        </p> 
 
-                <p> Samme gamle eller utforskende og nytt?</p>         
-            <label >Samme gamle</label>
-            <input type="range" name="points" min="0" max="10" id="meu">
-            <label >Nytt</label>
-            </p>  
+            <p> Samme gamle eller utforskende og nytt?</p>         
+        <label >Samme gamle</label>
+        <input type="range"  min="0" max="10" name="meu" id="meu">
+        <label >Nytt</label>
+        </p>  
 
-            <p> Er du komfertabel med å spørre andre om hjelp?</p>       
-            <label >Nei</label>
-            <input type="range" name="points" min="0" max="10" id="seh">
-            <label >Ja</label>
-            </p>     
-            <p> Hvor gammel er du?</p>       
-            <label >Alder</label>
-            <input type="number" name="points" min="16" max="99" id="alder">
-            </p>
-            <button type="submit" class="button">Bekreft</button>
-            </p>
-        </div>
-      </form>
-      <div id="msg">
-        <pre>
-        </pre>
-      </div>
-      <script type="text/javascript">
-        document.querySelectorAll('input[type=range]').forEach(f => {
-  f.setAttribute('data-value', f.value);
-  f.addEventListener('input', () => {
-    f.setAttribute('data-value', f.value);
-  });
+        <p> Er du komfertabel med å spørre andre om hjelp?</p>       
+        <label >Nei</label>
+        <input type="range"  min="0" max="10" name="seh" id="seh">
+        <label >Ja</label>
+        </p>     
+        <p> Hvor gammel er du?</p>       
+        <label >Alder</label>
+        <input type="number"  min="16" max="100 "name="alder" id="alder">
+        </p>
+        <button type="submit" class="button">Bekreft</button>
+        </p>
+    </div>
+  </form>
+  <div class="results">
+  <pre></pre>
+</div>
+    <script>
+// From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
+// Example POST method implementation using fetch:
+async function postData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json',
+             // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data) // body data type must match"Content-Type"header
+    });
+    return response.json(); // parses JSON response into native JavaScriptobjects
+}
+
+function handleSubmit(event) {
+     event.preventDefault();
+     const data = new FormData(event.target);
+     const formJSON = Object.fromEntries(data.entries());
+     const results = document.querySelector('.results pre');
+     postData('https://bacit.info/', formJSON)
+     .then(data => {
+        results.innerText = JSON.stringify(data, null, 2);
+        console.log(JSON.stringify(data, null, 2));
+
+     });
+}
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+  </script>
+  <script type="text/javascript">
+    document.querySelectorAll('input[type=range]').forEach(f => {
+f.setAttribute('data-value', f.value);
+f.addEventListener('input', () => {
+f.setAttribute('data-value', f.value);
 });
-    </script>
+});
+</script>
 </body>
-</html> 
+</html>
