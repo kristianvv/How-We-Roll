@@ -7,17 +7,19 @@
     <script src="index.js"></script>
 </head>
 <body>
+    <header class="navbar">
+       
+        <nav class="navbarInnhold">
+            <ul class="navbarList">
+        <li><a href="HWR_Start.html">Forside</a></li>
+        <li><a href="Om-oss.html">Om oss</a></li>
+        <li><a href="index.html">Spørreundersøkelse</a></li>
+        <li><a href="web_rapport.html">Resultat</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
     <!-- Selve navigationbaren -->
-<nav  class="topnav"> 
-    <div class="logo"> How-We-Roll</div>
-    <ul class="nav-links">
-        <div class="linker"><li><a href="#">Forside</a></li>
-        <li><a href="#">Om oss</a></li>
-        <li><a href="#">Spørreundersøkelse</a></li>
-        <li><a href="#">Resultat</a></li>
-        </ul></div> 
-        
-    <h1 class="bar" style="background-color: rgb(171, 171, 225); font-size: 70px; color: black;">How-We-Roll</h1>
     <form>
         <div class="a" id="9Bdata">
             <p>
@@ -87,7 +89,7 @@
             <label >Alder</label>
             <input type="number" name="points" min="0" max="10" id="alder">
             </p>
-            <input type="button" id="btn" value="Bekreft" class="bekreft-knapp" onclick="window.open('web_rapport.html', '_blank');">
+            <button type="submit" class="button">Bekreft</button>
             </p>
         </div>
       </form>
