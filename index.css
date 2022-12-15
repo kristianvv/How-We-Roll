@@ -8,12 +8,9 @@ a{
   text-decoration: none;
 }
 
-
 .navbarInnhold{
   width:100%;
 }
-
-
 
 li{
   list-style-type: none;
@@ -66,7 +63,9 @@ nav ul li a:hover{
   color: #FFF;
 }
 
-
+.active {
+  color: #DC7633;
+}
 
 /* Design av spørreskjema */
 
@@ -115,7 +114,8 @@ input[type=range]::-webkit-slider-runnable-track {
   color: blueviolet;
   }
 
-.bekreft-knapp {
+  /* bekreftknapp */ 
+.button {
   width: 30%;
   
   outline: none;
@@ -135,13 +135,15 @@ input[type=range]::-webkit-slider-runnable-track {
     display: inline-block;
 }
 
-.bekreft-knapp:hover {
+.button:hover {
   opacity: 0.7;
 }
-.bekreft-knapp:active {
+.button:active {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
-  
+
+/* slider */
+
 input[type=range]:hover {
   opacity: 0.6; 
 }
