@@ -3,6 +3,13 @@
 
     <title> How-We-Roll</title>
 <head> 
+    <script type="text/javascript">
+        document.querySelectorAll('input[type=range]').forEach(data => {
+    data.setAttribute('data-value', data.value);
+    data.addEventListener('input', () => {
+    data.setAttribute('data-value', data.value);
+    })});
+    </script>
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 </head>
@@ -124,21 +131,16 @@ function handleSubmit(event) {
      const results = document.querySelector('.results pre');
      postData('https://bacit.info/', formJSON)
      .then(data => {
-        results.innerText = JSON.stringify(data, null, 2);
-        console.log(JSON.stringify(data, null, 2));
-
+        bindestrek = "-"
+        bacit = "https://bacit.info/hwr/"
+        dotJSON = ".json"
+        let trxid = JSON.stringify(data.trxid, null, 2);
+        let time = JSON.stringify(data.time, null, 2);
+        results.innerText = bacit.toString() + time.replace(/"/g, "") + bindestrek.toString() + trxid.replace(/"/g, "") + dotJSON.toString()
      });
 }
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
   </script>
-  <script type="text/javascript">
-    document.querySelectorAll('input[type=range]').forEach(f => {
-f.setAttribute('data-value', f.value);
-f.addEventListener('input', () => {
-f.setAttribute('data-value', f.value);
-});
-});
-</script>
 </body>
 </html>
