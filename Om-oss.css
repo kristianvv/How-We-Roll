@@ -24,6 +24,7 @@ font-family: monospace;
     margin-top: 60px;
     width: 132px;
     height: 128px;
+    object-fit: cover;
 }
 
 .Navn
@@ -84,6 +85,7 @@ header{
   padding: 0px 20px;
   background-color: #2C3E50;
   justify-content: space-between;
+  border-radius: 10px;
 }
 
 .logo{

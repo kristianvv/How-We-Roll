@@ -27,6 +27,7 @@ header{
   padding: 0px 10px;
   background-color: #2C3E50;
   justify-content: space-between;
+  border-radius: 10px;
 }
 
 .logo{
@@ -90,7 +91,7 @@ body {
     font-family: 'Fjalla One', sans-serif;
     font-size: 46px;
     text-align: center;
-    border-radius: 23px;
+    border-radius: 10px;
   
   }
 
@@ -115,11 +116,23 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
 .bekreft-knapp {
-  background-color: rgb(114, 162, 218);
-  color: white;
-  border-radius: 3px;
-  border-width: 1px;
-  cursor: pointer;
+  width: 30%;
+  
+  outline: none;
+    background: #19a68c;
+    margin-top: 20px;
+    border: none;
+    height: 40px;
+    width: 35%;
+    color: #fff;
+    font-size: 19px;
+    border-radius: 30px;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .bekreft-knapp:hover {
