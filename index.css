@@ -80,6 +80,22 @@ nav ul li a:hover{
 
 /* Design av spørreskjema */
 
+
+.textbox {
+  border-radius: 6px;
+  border: 2px solid #19a68c; 
+  width: 270px;
+  height: 30px;
+}
+
+.textbox2 { 
+  border-radius: 6px;
+  border: 2px solid #19a68c; 
+  width: 70px;
+  height: 30px;
+
+}
+
 body {
     background-color: #e2e1e0;
   }
@@ -90,7 +106,6 @@ body {
     font-size: 15px;
     text-align: center;
     border-radius: 23px;
-  
   }
 
   
@@ -102,7 +117,6 @@ body {
     font-size: 46px;
     text-align: center;
     border-radius: 10px;
-  
   }
 
   p { 
@@ -155,9 +169,41 @@ input[type=range]::-webkit-slider-runnable-track {
 
 /* slider */
 
-input[type=range]:hover {
-  opacity: 0.6; 
+
+
+
+
+/* vårt design  */ 
+
+.slider {
+
 }
-input[type=range]:active {
-  opacity: 1;
+
+.slider:hover {
+  opacity: inherit;
 }
+
+
+/* w3school  https://www.w3schools.com/howto/howto_js_rangeslider.asp */ 
+.slider {
+  -webkit-appearance: none; 
+  width: 40%;
+  height: 12px;
+  border-radius: 5px;  
+  background: #5c5c5c;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #19a68c;
+  cursor: pointer;
+}
+
