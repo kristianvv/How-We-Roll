@@ -1,29 +1,253 @@
 <!DOCTYPE html>
-<html lang="nb"> 
-    
-    <title> How-We-Roll resultat </title>
-<head> 
-    <link rel="stylesheet" href="index.css">
+<html lang="nb">
+  <title>How-We-Roll resultat</title>
+  <head>
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-       
-        <nav>
-            <ul>
-             <li><a href="HWR_Start.html">Forside</a></li>
-        <li><a href="Om-oss.html">Om oss</a></li>
-        <li><a href="index.html">Spørreundersøkelse</a></li>
-        <li><a href="web_rapport.html">Resultat</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="HWR_Start.html">Forside</a></li>
+          <li><a href="Om-oss.html">Om oss</a></li>
+          <li><a href="index.html">Spørreundersøkelse</a></li>
+          <li><a href="web_rapport.html">Resultat</a></li>
+        </ul>
+      </nav>
     </header>
-    <h1>How We Roll resultat</h1> 
-    <form>
-        <div class="a">
-            <p>Her kommer resultat</p><br>
-            <input type="button" value="Registrer" class="bekreft-knapp" onclick="window.location.href='web_form.html';" /></p>
-        </div>
-      </form>
-</body>
+    <h1>How We Roll resultat</h1>
+    <form class="formTest">
+      <canvas id="can" width="900"></canvas>
+      <div class="a">
+        <p>Her kommer resultat</p>
+        <br />
+      </div>
+    </form>
+    <div class="9b data">
+      <p>9B 2022</p>
+    </div>
+    <script>
+      let canvas = document.querySelector("canvas");
+      canvas.height = 900;
+
+      var c = canvas.getContext("2d");
+
+      c.font = "15px serif";
+      //mona
+      c.fillText("Morgenfugl", 14, 15);
+      c.fillText("Nattugle", 525, 15);
+
+      c.beginPath();
+      c.moveTo(100, 12);
+      c.lineTo(500, 12);
+
+      //aila
+      c.fillText("Alene", 10, 45);
+      c.fillText("Med andre", 525, 45);
+
+      //context.beginPath();
+      c.moveTo(100, 42);
+      c.lineTo(500, 42);
+
+      //dify
+      c.fillText("Detaljert", 10, 75);
+      c.fillText("Kort og konkret", 500, 75);
+
+      c.moveTo(100, 72);
+      c.lineTo(500, 72);
+
+      //stosmå
+      c.fillText("Lite", 10, 105);
+      c.fillText("Mye", 525, 105);
+
+      c.moveTo(100, 102);
+      c.lineTo(500, 102);
+
+      //plako
+      c.fillText("For tidlig", 10, 135);
+      c.fillText("For seint", 525, 135);
+
+      c.moveTo(100, 132);
+      c.lineTo(500, 132);
+
+      //lokre
+      c.fillText("Utadvent", 10, 165);
+      c.fillText("Innadvent", 525, 165);
+
+      c.moveTo(100, 162);
+      c.lineTo(500, 162);
+
+      //tobntob
+      c.fillText("Hjemme", 10, 195);
+      c.fillText("Andre steder", 520, 195);
+
+      c.moveTo(100, 192);
+      c.lineTo(500, 192);
+
+      //kate
+      c.fillText("Teksts", 10, 225);
+      c.fillText("Lyd", 525, 225);
+
+      c.moveTo(100, 222);
+      c.lineTo(500, 222);
+
+      c.fillText("Samme gamle", 10, 255);
+      c.fillText("Nytt", 525, 255);
+
+      c.moveTo(100, 252);
+      c.lineTo(500, 252);
+
+      //doframo
+      c.fillText("Nei", 10, 285);
+      c.fillText("Ja", 525, 285);
+
+      c.moveTo(100, 282);
+      c.lineTo(500, 282);
+      c.stroke();
+
+      fetch(
+        "https://bacit.info/hwr/20221215120343-5b132d1faf39a4a1e13023b52037b7bb.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 42;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 102;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 162;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 192;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 222;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 252;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 432;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 437);
+        });
+    </script>
+  </body>
 </html>

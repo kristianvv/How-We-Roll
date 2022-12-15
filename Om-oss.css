@@ -2,6 +2,7 @@ body{
 background: #e2e1e0;
 text-align: center;
 font-family: monospace;
+
 }
 .kort{
     background: #1d2630;
@@ -23,6 +24,7 @@ font-family: monospace;
     margin-top: 60px;
     width: 132px;
     height: 128px;
+    object-fit: cover;
 }
 
 .Navn
@@ -32,16 +34,9 @@ font-family: monospace;
 
 .title{
     color: #7c8097;
-    font-size: 16px;
+    font-size: 15px;
 }
 
-.desc{
-    font-size: 14px;
-    margin-left: 65px;
-    margin-right: 65px;
-    color: #b7b8c0;
-margin-top: 16px;
-}
 
 .btn{
     outline: none;
@@ -69,59 +64,61 @@ margin-top: 16px;
     cursor: pointer;
 }
 
+/*Navigation bar*/
 body{
-    font-family: 'Quicksand', sans-serif;
-  }
-  
-  a{
-    text-decoration: none;
-  }
-  
-  li{
-    list-style-type: none;
-  }
-  
-  header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 10%;
-    background-color: #2C3E50;
-    justify-content: space-between;
-  }
-  
-  .logo{
-    color: #FFF;
-    font-weight: 900;
-  }
-  
-  nav ul{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  nav ul li{
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  nav ul li a{
-    color: #FFF;
-    display: block;
-    padding: 10px 20px;
-    border-radius: 1px;
-  }
-  
-  nav ul li a:hover{
-    color: #DC7633;
-  }
-  
-  .cta{
-    background-color: #DC7633;
-    color: #FFF;
-  }
-  
-  .cta:hover{
-    background-color: #D35400;
-    color: #FFF;
-  }
-  
+  font-family: 'Quicksand', sans-serif;
+ 
+}
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: #2C3E50;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.logo{
+  color: #FFF;
+  font-weight: 900;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+nav ul li a{
+  color: #FFF;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover{
+  color: #DC7633;
+}
+
+.cta{
+  background-color: #DC7633;
+  color: #FFF;
+}
+
+.cta:hover{
+  background-color: #D35400;
+  color: #FFF;
+}
