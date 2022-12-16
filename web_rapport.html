@@ -1,25 +1,1115 @@
 <!DOCTYPE html>
-<html lang="nb"> 
-    
-    <title> How-We-Roll resultat </title>
-<head> 
-    <link rel="stylesheet" href="index.css">
+<html lang="nb">
+  <title>How-We-Roll resultat</title>
+  <head>
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
-</head>
-<body>
-    <nav display: inline-block>       
-        <ul>    
-             <a href="HWR_Start.html">Home</a> 
-             <a href="index.html">Web Form</a> 
-             <a href="web_rapport.html">HWR Report</a> 
-        </ul>   
-    </nav>
-    <h1>How We Roll resultat</h1> 
-    <form>
-        <div class="a">
-            <p>Her kommer resultat</p><br>
-            <input type="button" value="Registrer" class="bekreft-knapp" onclick="window.location.href='web_form.html';" /></p>
-        </div>
-      </form>
-</body>
+  </head>
+  <body>
+        <header class="navbar">
+       
+          <nav class="navbarInnhold">
+              <ul class="navbarList">
+          <li><a href="HWR_Start.html">Forside</a></li>
+          <li><a href="Om-oss.html">Om oss</a></li>
+          <li><a href="index.html">Spørreundersøkelse</a></li>
+          <li><a class="active" href="web_rapport.html">Resultat</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+    <body class="a"> 
+      
+    <h1>How We Roll resultat</h1>
+    <form class="formTest">
+      <canvas id="can" width="900"></canvas>
+      <div class="a">
+        <p>Her kommer resultat</p>
+        <br />
+      </div>
+    </form>
+    <div class="9b data">
+      <p>9B 2022</p>
+    </div>
+    <script>
+      let canvas = document.querySelector("canvas");
+      canvas.height = 900;
+
+      var c = canvas.getContext("2d");
+
+      c.font = "15px serif";
+      //mona
+      c.fillText("Morgenfugl", 14, 15);
+      c.fillText("Nattugle", 525, 15);
+
+      c.beginPath();
+      c.moveTo(100, 12);
+      c.lineTo(500, 12);
+
+      //aila
+      c.fillText("Alene", 10, 45);
+      c.fillText("Med andre", 525, 45);
+
+      //context.beginPath();
+      c.moveTo(100, 42);
+      c.lineTo(500, 42);
+
+      //dify
+      c.fillText("Detaljert", 10, 75);
+      c.fillText("Kort og konkret", 500, 75);
+
+      c.moveTo(100, 72);
+      c.lineTo(500, 72);
+
+      //stosmå
+      c.fillText("Lite", 10, 105);
+      c.fillText("Mye", 525, 105);
+
+      c.moveTo(100, 102);
+      c.lineTo(500, 102);
+
+      //plako
+      c.fillText("For tidlig", 10, 135);
+      c.fillText("For seint", 525, 135);
+
+      c.moveTo(100, 132);
+      c.lineTo(500, 132);
+
+      //lokre
+      c.fillText("Utadvent", 10, 165);
+      c.fillText("Innadvent", 525, 165);
+
+      c.moveTo(100, 162);
+      c.lineTo(500, 162);
+
+      //tobntob
+      c.fillText("Hjemme", 10, 195);
+      c.fillText("Andre steder", 520, 195);
+
+      c.moveTo(100, 192);
+      c.lineTo(500, 192);
+
+      //kate
+      c.fillText("Teksts", 10, 225);
+      c.fillText("Lyd", 525, 225);
+
+      c.moveTo(100, 222);
+      c.lineTo(500, 222);
+
+      c.fillText("Samme gamle", 10, 255);
+      c.fillText("Nytt", 525, 255);
+
+      c.moveTo(100, 252);
+      c.lineTo(500, 252);
+
+      //doframo
+      c.fillText("Nei", 10, 285);
+      c.fillText("Ja", 525, 285);
+
+      c.moveTo(100, 282);
+      c.lineTo(500, 282);
+      c.stroke();
+
+      fetch(
+        "https://bacit.info/hwr/20221215120343-5b132d1faf39a4a1e13023b52037b7bb.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 42;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 102;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 178;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 200;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 230;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 260;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 290;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 432;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "red";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 440);
+        });
+
+      fetch(
+        "https://bacit.info/hwr/20221215161131-2733cb0c36d3de4f81da57e737eb5d07.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 42;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 80;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 110;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 140;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 170;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 200;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 222;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 252;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 298;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 474;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "blue";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 480);
+        });
+
+      fetch(
+        "https://bacit.info/hwr/20221215161917-f73d15735d779ac8896807a3226daaad.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 50;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 110;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 162;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 192;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 222;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 260;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 514;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "yellow";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 520);
+        });
+
+      fetch(
+        "https://bacit.info/hwr/20221215163043-6f542cf68224b13f0f47d08083762753.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 42;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 102;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 162;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 200;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 222;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 252;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 274;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 553;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "green";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 560);
+        });
+
+      fetch(
+        "https://bacit.info/hwr/20221215163307-0b52869ed8a7e2888126a4e23fe57dc4.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 50;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 102;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 162;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 192;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 230;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 244;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 288;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 595;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "orange";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 600);
+        });
+
+      fetch(
+        "https://bacit.info/hwr/20221215164044-86d8abc41fd59ca680e67a501bde2f53.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 12;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 42;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 102;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 170;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 192;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 222;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 252;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 308;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 15;
+          var Y = 634;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "aqua";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 640);
+        });
+
+      fetch(
+        "https://bacit.info/hwr/20221215170836-ecd998d447414c9baf7ed7438d122f4e.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          var X = 100 + parseInt(data.mon) * 40;
+          var Y = 20;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.sos) * 40;
+          var Y = 42;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tre) * 40;
+          var Y = 72;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.søv) * 40;
+          var Y = 102;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.tos) * 40;
+          var Y = 132;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.ieu) * 40;
+          var Y = 162;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.jes) * 40;
+          var Y = 192;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.kom) * 40;
+          var Y = 222;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.meu) * 40;
+          var Y = 252;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.seh) * 400;
+          var Y = 298;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 100 + parseInt(data.alder, 40);
+          var Y = 282;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          var X = 14;
+          var Y = 674;
+          var R = 10;
+          c.beginPath();
+          c.arc(X, Y, R, 0, 2 * Math.PI, false);
+          c.fillStyle = "black";
+          c.fill();
+          c.lineWidth = 1;
+          c.strokeStyle = "black";
+          c.stroke();
+
+          c.fillStyle = "black";
+          c.fillText(data.navn, 30, 680);
+        });
+    </script>
+  </body>
 </html>

@@ -1,31 +1,126 @@
+/*Navigation bar*/
+
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.a {
+  padding: 70px;
+}
+.navbarInnhold{
+  width:100%;
+}
+
+li{
+  list-style-type: none;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: #2C3E50;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.logo{
+  color: #FFF;
+  font-weight: 900;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+nav ul li a{
+  color: #FFF;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 1px;
+}
+
+nav ul li a:hover{
+  color: #DC7633;
+}
+
+.cta{
+  background-color: #DC7633;
+  color: #FFF;
+}
+
+.cta:hover{
+  background-color: #D35400;
+  color: #FFF;
+}
+
+.active {
+  color: #DC7633;
+}
+
+.navbar {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  
+}
+
+
+/* Design av spørreskjema */
+
+
+.textbox {
+  border-radius: 6px;
+  border: 2px solid #19a68c; 
+  width: 270px;
+  height: 30px;
+}
+
+.textbox2 { 
+  border-radius: 6px;
+  border: 2px solid #19a68c; 
+  width: 70px;
+  height: 30px;
+
+}
+
 body {
-    background-color: rgb(245, 218, 198);
+    background-color: #e2e1e0;
   }
   ul {
     color: rgb(0, 0, 0);
     margin-left: 20px;
     font-family: 'Verdana', sans-serif;
-    font-size: 26px;
+    font-size: 15px;
     text-align: center;
     border-radius: 23px;
-  
   }
 
   
   h1 {
-    background-color: rgb(11, 162, 222); font-size: 70px; color: black;
-    color: rgb(6, 6, 83);
+    background-color: #2C3E50; font-size: 70px; color: black;
+    color: rgb(255, 255, 255);
     margin-left: 20px;
     font-family: 'Fjalla One', sans-serif;
     font-size: 46px;
     text-align: center;
-    border-radius: 23px;
-  
+    border-radius: 10px;
   }
 
   p { 
     color: rgb(0, 0, 0);
-    <!--text-decoration-line: underline;-->
     text-decoration-color: rgb(51, 23, 54);  
     font-family: "Georgia", monospace, serif;
     font-size: 20px;
@@ -44,25 +139,71 @@ input[type=range]::-webkit-slider-runnable-track {
   color: blueviolet;
   }
 
-.bekreft-knapp {
-  background-color: rgb(114, 162, 218);
-  color: white;
-  border-radius: 3px;
-  border-width: 1px;
+  /* bekreftknapp */ 
+.button {
+  width: 30%;
+  
+  outline: none;
+    background: #19a68c;
+    margin-top: 20px;
+    border: none;
+    height: 40px;
+    width: 35%;
+    color: #fff;
+    font-size: 19px;
+    border-radius: 30px;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+.button:active {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* slider */
+
+
+
+
+
+/* vårt design  */ 
+
+.slider {
+
+}
+
+.slider:hover {
+  opacity: inherit;
+}
+
+
+/* w3school  https://www.w3schools.com/howto/howto_js_rangeslider.asp */ 
+.slider {
+  -webkit-appearance: none; 
+  width: 40%;
+  height: 12px;
+  border-radius: 5px;  
+  background: #5c5c5c;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #19a68c;
   cursor: pointer;
 }
 
-.bekreft-knapp:hover {
-  opacity: 0.7;
-}
-.bekreft-knapp:active {
-  box-shadow: 5px 5px 10px rgba(0,0,0, 0.15);
-}
-  
-input[type=range]:hover {
-  opacity: 0.6; 
-}
-input[type=range]:active {
-  opacity: 1;
-}
-  
