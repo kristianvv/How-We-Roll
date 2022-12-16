@@ -3,15 +3,7 @@
 
     <title> How-We-Roll</title>
 <head> 
-    <script type="text/javascript">
-        document.querySelectorAll('input[type=range]').forEach(data => {
-    data.setAttribute('data-value', data.value);
-    data.addEventListener('input', () => {
-    data.setAttribute('data-value', data.value);
-    })});
-    </script>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
 </head>
 
 <!-- Selve navigationbaren -->
@@ -127,23 +119,23 @@ async function postData(url = '', data = {}) {
     return response.json(); // parses JSON response into native JavaScriptobjects
 }
 
-function handleSubmit(event) {
-     event.preventDefault();
-     const data = new FormData(event.target);
-     const formJSON = Object.fromEntries(data.entries());
+function handleSubmit(event) { // Bearbeider data etter trykk av Bekreft-knapp 
+     event.preventDefault(); // Stopper browser data
+     const data = new FormData(event.target); // Definerer data som en ny form data
+     const formJSON = Object.fromEntries(data.entries()); 
      const results = document.querySelector('.results pre');
-     postData('https://bacit.info/', formJSON)
+     postData('https://bacit.info/', formJSON) // Sender bearbeidet data til ekstern server, mottar time og trxid 
      .then(data => {
         bindestrek = "-"
         bacit = "https://bacit.info/hwr/"
         dotJSON = ".json"
         let trxid = JSON.stringify(data.trxid, null, 2);
         let time = JSON.stringify(data.time, null, 2);
-        results.innerText = bacit.toString() + time.replace(/"/g, "") + bindestrek.toString() + trxid.replace(/"/g, "") + dotJSON.toString()
+        results.innerText = bacit.toString() + time.replace(/"/g, "") + bindestrek.toString() + trxid.replace(/"/g, "") + dotJSON.toString() //Kombinerer time og trxid til en JSON-link
      });
 }
 const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', handleSubmit); // Sjekker når Bekreft-knapp blir trykket
   </script>
 </body>
 </html>

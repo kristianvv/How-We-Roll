@@ -26,13 +26,13 @@
       <p>9B 2022</p>
     </div>
     <script>
-      let canvas = document.querySelector("canvas");
+      let canvas = document.querySelector("canvas"); 
       canvas.height = 900;
 
       var c = canvas.getContext("2d");
 
       c.font = "15px serif";
-      //mona
+      //mon
       c.fillText("Morgenfugl", 14, 15);
       c.fillText("Nattugle", 525, 15);
 
@@ -40,7 +40,7 @@
       c.moveTo(100, 12);
       c.lineTo(500, 12);
 
-      //aila
+      //sos
       c.fillText("Alene", 10, 45);
       c.fillText("Med andre", 525, 45);
 
@@ -48,55 +48,57 @@
       c.moveTo(100, 42);
       c.lineTo(500, 42);
 
-      //dify
+      //tre
       c.fillText("Detaljert", 10, 75);
       c.fillText("Kort og konkret", 500, 75);
 
       c.moveTo(100, 72);
       c.lineTo(500, 72);
 
-      //stosmå
+      //søv
       c.fillText("Lite", 10, 105);
       c.fillText("Mye", 525, 105);
 
       c.moveTo(100, 102);
       c.lineTo(500, 102);
 
-      //plako
+      //tos
       c.fillText("For tidlig", 10, 135);
       c.fillText("For seint", 525, 135);
 
       c.moveTo(100, 132);
       c.lineTo(500, 132);
 
-      //lokre
+      //ieu
       c.fillText("Utadvent", 10, 165);
       c.fillText("Innadvent", 525, 165);
 
       c.moveTo(100, 162);
       c.lineTo(500, 162);
 
-      //tobntob
+      //jes
       c.fillText("Hjemme", 10, 195);
       c.fillText("Andre steder", 520, 195);
 
       c.moveTo(100, 192);
       c.lineTo(500, 192);
 
-      //kate
+      //kom
       c.fillText("Teksts", 10, 225);
       c.fillText("Lyd", 525, 225);
 
       c.moveTo(100, 222);
       c.lineTo(500, 222);
 
+
+       //meu
       c.fillText("Samme gamle", 10, 255);
       c.fillText("Nytt", 525, 255);
 
       c.moveTo(100, 252);
       c.lineTo(500, 252);
 
-      //doframo
+      //seh
       c.fillText("Nei", 10, 285);
       c.fillText("Ja", 525, 285);
 
@@ -105,7 +107,7 @@
       c.stroke();
 
       fetch(
-        "https://bacit.info/hwr/20221215120343-5b132d1faf39a4a1e13023b52037b7bb.json"
+        "https://bacit.info/hwr/20221215120343-5b132d1faf39a4a1e13023b52037b7bb.json" // Henter data fra JSON-link
       )
         .then((response) => response.json())
         .then((data) => {
